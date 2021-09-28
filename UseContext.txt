@@ -1,0 +1,63 @@
+eu vou simular um estado global para a aplicação inteira
+
+imagian qu eue tenho um title o titulo do contexto
+eu vou colocar um countereu preciso de uma forma de colocar esse estado em uns
+dos componentes qualquer esse componenete é responsavel por passar esse estado para todos os compoenetes
+suponha que voce queria colocar como pai de todos os componentes
+esse App
+--------------------------
+function App() {
+  return (
+    <div className="App">
+      <h1>oi</h1>
+    </div>
+  )
+}
+--------------------------------
+
+Priemiro tenho que criar um contexto, eu vou criar com se fosse um componente mesmo, por uqe o contexto vai ter um propriedade de provider
+e consumer, que voce precisa utilizar aqui no caso, deixa eu te criar ele aqui no caso
+
+criando um div
+------------------------------------------------------
+const Div = ({ children }) => {
+  return <div className="App">{children}</div>;
+}
+
+------------------------------------------------------
+
+function App() {
+  return (
+    <Div>
+      <h1>Oi!</h1>
+    </Div>
+  )
+}
+
+---------------------------------------------------------------------
+
+e agoa vamos fazer outgro compoenente chamado h1 igual a div, e nisso vamos colocar esse compoenete dentro da GlobalContext
+
+<GlobalContext>
+  <Div>
+    <H1>Oi!</H1>
+  </Div>
+</GlobalContext>
+
+-----------------------------------------------
+só que nele tenho que colcoar um provider, ou seja ele vai prover um contexto para outros
+elementos e nesse provider tenho que colocar um value que vai controlar o que meu componentes
+veem do meu contexto vai ser esse value.
+O que é meu value, agora vem a sacada
+eu poderia passar qualquer coisa por exemplo esse nosso objeto eu vou ter acesso a um valor
+agora eu posso por exemplo pegar esse valores de dentro desse componentes
+que nao tem nada ver com a historia.
+suponha que esses componeentes estão em arquivos separado
+passar a taga H1 para ser filho desse outro componente
+
+Exemplo:
+
+
+
+
+ 
